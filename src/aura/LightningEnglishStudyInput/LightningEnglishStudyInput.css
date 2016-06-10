@@ -1,0 +1,9 @@
+.THIS .correct {
+    background-color: rgba(217, 255, 223 ,0.5);
+}
+.THIS .incorrect {
+    background-color: rgba(255, 0, 0 ,0.3);
+}
+.THIS .error {
+    color: red;
+}

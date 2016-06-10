@@ -1,0 +1,12 @@
+<aura:component controller="EnglishStudyController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="englishTableList" type="EnglishTable__c[]" />
+    <ltng:require styles="/resource/SLDS201/assets/styles/salesforce-lightning-design-system.css" />
+    <aura:handler name="init" action="{!c.init}" value="{!this}" />
+    <div class="slds">
+        <ui:outputText value="{! 'All ' + v.englishTableList.length + ' questions'}" />
+        <aura:iteration items="{!v.englishTableList}" var="english">
+            <c:LightningEnglishStudyInput englishTable="{!english}" />
+        </aura:iteration>
+    </div>
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component >
+    <aura:attribute name="englishTable" type="EnglishTable__c" required="true" description="Parent Component is Lightning English Input.cmp" />
+    <aura:attribute name="answer" type="String" />
+    <aura:attribute name="errorMessage" type="String" />
+    <div class="slds-m-around--small">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label">Q: {!v.englishTable.Japanese__c}</label>
+            <div class="slds-form-element__control">
+                <ui:inputText aura:id="input-answer" value="{!v.answer}" class="slds-input" change="{!c.checkAnswer}" />
+            </div>
+            <aura:if isTrue="{! !empty(v.errorMessage)}">
+                <div class="slds-form-element__help error">{!v.errorMessage}</div>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>
